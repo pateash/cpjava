@@ -1,4 +1,4 @@
-import sun.font.Script;
+package live.ashish.codejava.libs;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -9,10 +9,8 @@ public class Utils {
     private static final String SCRIPT_ENGINE="javascript";
 
     /* this function evaluates a string using javascript engine, syntax of expression shoule be  must be javascript*/
-    public static Integer evaluateExpression(String expression) throws ScriptException {
-
+    public static String evaluateExpression(String expression) throws ScriptException {
         ScriptEngine engine=new ScriptEngineManager().getEngineByName(SCRIPT_ENGINE);
-
-          return Integer.parseInt(engine.eval(expression).toString());
+          return engine.eval(expression).toString();
     }
 }
