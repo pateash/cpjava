@@ -7,7 +7,8 @@ class Main
 {
     public static FastIO io;
 
-    //    if true passed, it means that is LOCAL, so we read/print from/on by FileWriter output.txt, otherwise print on console(for submitting)
+    //    if true passed,
+    //    it means that is LOCAL, so we read/print from/on by FileWriter output.txt, otherwise print on console(for submitting)
     public static void main(String[] args)
     {
 
@@ -53,8 +54,8 @@ class FastIO<T>
             System.out.println("------------------------");
             try {
                 //this also works ->   br= new BufferedReader(new FileReader(System. getProperty("user.dir")+File.separator+"input.txt"));
-                br= new BufferedReader(new FileReader("input.txt"));
-                pr=new PrintWriter(new BufferedWriter(new FileWriter("output.txt")));
+                br= new BufferedReader(new FileReader("src/main/resources/in.txt"));
+                pr=new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/out.txt")));
             } catch(IOException e) {
                 e.printStackTrace();
                 System.out.println("IO: can't read from file, for local=true");
