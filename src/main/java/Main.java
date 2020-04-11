@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 
 
 class Main
@@ -25,6 +25,15 @@ class Main
         }
     }
 
+    private static void solve(int n) {
+        List<Integer> l = new ArrayList<>();
+
+        for (int i=0;i<n;i++)
+            l.add(io.readInt());
+
+        Collections.sort(l);
+    }
+
     private static FastIO getIO(String[] args) {
         FastIO result;
         if (args.length != 0 && Boolean.parseBoolean(args[0])) {
@@ -34,12 +43,6 @@ class Main
             result = new FastIO(false);
         }
         return result;
-    }
-
-    private static void solve(int number) {
-        if(number%2==0)
-            io.println("Even");
-        else io.println("Odd");
     }
 }
 
