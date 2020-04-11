@@ -1,4 +1,7 @@
 import java.io.*;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 
@@ -34,10 +37,57 @@ class Main
     }
 
     private static void solve(int number) {
-        if(number%2==0)
-            io.println("Even");
-        else io.println("Odd");
+        List<List<Long>> ans = new ArrayList<>();
+
+        List<BigInteger> lcmList= new ArrayList<>();
+
+
+        for(long i=1;i<=number;i++){
+             checkAndAdd(ans,i,lcmList);
+        }
+
+        io.println(ans.size());
+        for(List<Long> l: ans){
+            io.print(l.size());
+            for(int i=0;i<l.size();i++){
+                io.print(" "+l.get(i));
+//                if(i!=l.size()-1)
+//                    io.print(" ");
+            }
+            io.nl();
+        }
+
     }
+
+    private static void checkAndAdd(List<List<Long>> ans, long  x, List<BigInteger> lcmList) {
+
+        BigInteger X= BigInteger.valueOf(x);
+
+        for(int i=0;i<ans.size();i++){
+            if(gcd(lcmList.get(i),X).longValue()== 1L){
+                ans.get(i).add(x);
+                lcmList.set(i,lcm(lcmList.get(i),X));
+                return;
+            }
+        }
+
+        List<Long> newL = new ArrayList<>();
+        newL.add(x);
+        ans.add(newL);
+        lcmList.add(BigInteger.valueOf(x));
+    }
+
+    private static BigInteger lcm(BigInteger a, BigInteger b) {
+        BigInteger g = gcd(a,b);
+        return a.multiply(b).divide(g);
+    }
+
+    private static BigInteger gcd(BigInteger a, BigInteger b) {
+            if(b.longValue()==0) return a;
+            return gcd(b,a.mod(b));
+    }
+
+
 }
 
 class FastIO<T>
