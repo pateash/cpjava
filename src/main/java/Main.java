@@ -11,13 +11,8 @@ class Main
     public static void main(String[] args)
     {
 
-        if(args.length!=0 && Boolean.parseBoolean(args[0])){
-            io =new FastIO(true);
-        }else{
-            //if not passed then it is not local so print on console
-            io =new FastIO(false);
-        }
-      int t=io.readInt();
+        io = getIO(args);
+        int t=io.readInt();
         while(t--!=0){
            int n = io.readInt();
            solve(n);
@@ -25,6 +20,17 @@ class Main
 
         //we have to do flush manually after doing everything
         io.flush();
+    }
+
+    private static FastIO getIO(String[] args) {
+        FastIO result;
+        if (args.length != 0 && Boolean.parseBoolean(args[0])) {
+            result = new FastIO(true);
+        } else {
+            //if not passed then it is not local so print on console
+            result = new FastIO(false);
+        }
+        return result;
     }
 
     private static void solve(int number) {
