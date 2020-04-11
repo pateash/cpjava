@@ -1,8 +1,10 @@
+package live.ashish.codejava.libs;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
 
-class Main
+class MainExample
 {
     public static FastIO io;
 
