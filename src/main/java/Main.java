@@ -12,14 +12,17 @@ class Main
     {
 
         io = getIO(args);
+        main(); // write program here
+        //we have to do flush manually after doing ev erything
+        io.flush();
+    }
+
+    private static void main() {
         int t=io.readInt();
         while(t--!=0){
-           int n = io.readInt();
-           solve(n);
+            int n = io.readInt();
+            solve(n);
         }
-
-        //we have to do flush manually after doing everything
-        io.flush();
     }
 
     private static FastIO getIO(String[] args) {
