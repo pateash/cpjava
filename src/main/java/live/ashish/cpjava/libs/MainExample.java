@@ -1,4 +1,4 @@
-package live.ashish.codejava.libs;
+package live.ashish.cpjava.libs;
 
 import java.io.*;
 import java.util.StringTokenizer;
