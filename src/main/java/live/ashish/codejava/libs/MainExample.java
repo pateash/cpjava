@@ -1,8 +1,10 @@
+package live.ashish.codejava.libs;
+
 import java.io.*;
-import java.util.*;
+import java.util.StringTokenizer;
 
 
-class Main
+class MainExample
 {
     public static FastIO io;
 
@@ -11,38 +13,26 @@ class Main
     public static void main(String[] args)
     {
 
-        io = getIO(args);
-        main(); // write program here
-        //we have to do flush manually after doing ev erything
+        if(args.length!=0 && Boolean.parseBoolean(args[0])){
+            io =new FastIO(true);
+        }else{
+            //if not passed then it is not local so print on console
+            io =new FastIO(false);
+        }
+      int t=io.readInt();
+        while(t--!=0){
+           int n = io.readInt();
+           solve(n);
+        }
+
+        //we have to do flush manually after doing everything
         io.flush();
     }
 
-    private static void main() {
-        int t=io.readInt();
-        while(t--!=0){
-            int n = io.readInt();
-            solve(n);
-        }
-    }
-
-    private static void solve(int n) {
-        List<Integer> l = new ArrayList<>();
-
-        for (int i=0;i<n;i++)
-            l.add(io.readInt());
-
-        Collections.sort(l);
-    }
-
-    private static FastIO getIO(String[] args) {
-        FastIO result;
-        if (args.length != 0 && Boolean.parseBoolean(args[0])) {
-            result = new FastIO(true);
-        } else {
-            //if not passed then it is not local so print on console
-            result = new FastIO(false);
-        }
-        return result;
+    private static void solve(int number) {
+        if(number%2==0)
+            io.println("Even");
+        else io.println("Odd");
     }
 }
 
