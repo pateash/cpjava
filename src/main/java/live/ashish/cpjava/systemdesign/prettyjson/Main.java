@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Our Custom Version");
 
         // indent is being used recursively to add indentation (spaces) before writing anything
-        String customPrettyPrint = customPrettyPrint(exampleObject, 0);
+        String customPrettyPrint = customPrettyPrint(exampleObject);
         // Print the result
         System.out.println(customPrettyPrint);
     }

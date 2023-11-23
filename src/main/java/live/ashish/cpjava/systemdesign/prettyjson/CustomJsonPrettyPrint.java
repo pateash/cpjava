@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class CustomJsonPrettyPrint {
 
-    public static String customPrettyPrint(Object obj, int indent) {
+    public static String customPrettyPrint(Object obj) {
         StringBuilder result = new StringBuilder();
-        prettyPrintObject(obj, result, indent);
+        prettyPrintObject(obj, result, 0); // indent will increase recursively
         return result.toString();
     }
 
@@ -30,6 +30,7 @@ public class CustomJsonPrettyPrint {
     private static void prettyPrintMap(Map<?, ?> map, StringBuilder result, int indent) {
         result.append("{\n");
         map.forEach((key, value) -> {
+            // key will always be native type so we can directly append it
             result.append(indentString(indent + 1))
                   .append("\"").append(key).append("\": ");
             prettyPrintObject(value, result, indent + 1);
@@ -38,6 +39,7 @@ public class CustomJsonPrettyPrint {
         result.append(indentString(indent)).append("}");
     }
 
+    // this is for int[] type arrays
     private static void prettyPrintArray(Object array, StringBuilder result, int indent) {
         result.append("[\n");
         int length = java.lang.reflect.Array.getLength(array);
@@ -49,6 +51,7 @@ public class CustomJsonPrettyPrint {
         result.append(indentString(indent)).append("]");
     }
 
+    // this is for iterable types like ArrayList etc.
     private static void prettyPrintIterable(Iterable<?> iterable, StringBuilder result, int indent) {
         result.append("[\n");
         iterable.forEach(item -> {
@@ -60,6 +63,8 @@ public class CustomJsonPrettyPrint {
     }
 
     private static void prettyPrintFields(Object obj, StringBuilder result, int indent) {
+
+        // we have to find structure of this object and then we have recursively print those values
         result.append("{\n");
         Class<?> clazz = obj.getClass();
         while (clazz != null) {
