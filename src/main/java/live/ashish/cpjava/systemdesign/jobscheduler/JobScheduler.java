@@ -7,7 +7,8 @@ package live.ashish.cpjava.systemdesign.jobscheduler;
 * */
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -51,6 +52,8 @@ public class JobScheduler {
                 e.printStackTrace();
             }
             executorService.execute(new Thread(j));
+            // we can also use submit and get the future
+//            Future<?> submit = executorService.submit(new Thread(j));
         }
 
         executorService.shutdown();
