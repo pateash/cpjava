@@ -4,12 +4,12 @@ package live.ashish.cpjava.systemdesign.parkinglot;
 // this problem is to design a parking lot with given capacity
 // it can also store vehicles of different types
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import live.ashish.cpjava.systemdesign.parkinglot.enums.VehicleType;
+import live.ashish.cpjava.systemdesign.parkinglot.pojos.ParkingSpot;
+import live.ashish.cpjava.systemdesign.parkinglot.pojos.ParkingTicket;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class ParkingLot {
     List<ParkingSpot> parkingSpots = new ArrayList<>();
@@ -61,19 +61,4 @@ public class ParkingLot {
     }
 }
 
-enum VehicleType {
-    TRUCK, CAR, BUS, EMPTY
-}
 
-@Data
-@AllArgsConstructor
-class ParkingSpot {
-    VehicleType vehicleType;
-}
-
-
-@Data
-@AllArgsConstructor
-class ParkingTicket {
-    int ticketNumber;
-}
