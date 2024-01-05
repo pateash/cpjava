@@ -1,10 +1,9 @@
 package live.ashish.cpjava.systemdesign.parkinglot;
 
 
-import java.util.Locale;
 import java.util.Scanner;
 
-public class Runner {
+public class ParkingLotRunner {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
