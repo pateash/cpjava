@@ -2,7 +2,7 @@ package live.ashish.cpjava.systemdesign.parkinglot;
 
 
 import live.ashish.cpjava.systemdesign.parkinglot.enums.VehicleType;
-import live.ashish.cpjava.systemdesign.parkinglot.pojos.ParkingTicket;
+import live.ashish.cpjava.systemdesign.parkinglot.entity.ParkingTicket;
 
 import java.util.Scanner;
 

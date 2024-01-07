@@ -1,4 +1,4 @@
-package live.ashish.cpjava.systemdesign.parkinglot.pojos;
+package live.ashish.cpjava.systemdesign.parkinglot.entity;
 
 import live.ashish.cpjava.systemdesign.parkinglot.enums.VehicleType;
 import lombok.AllArgsConstructor;

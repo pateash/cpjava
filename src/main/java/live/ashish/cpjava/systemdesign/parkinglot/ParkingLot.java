@@ -5,8 +5,8 @@ package live.ashish.cpjava.systemdesign.parkinglot;
 // it can also store vehicles of different types
 
 import live.ashish.cpjava.systemdesign.parkinglot.enums.VehicleType;
-import live.ashish.cpjava.systemdesign.parkinglot.pojos.ParkingSpot;
-import live.ashish.cpjava.systemdesign.parkinglot.pojos.ParkingTicket;
+import live.ashish.cpjava.systemdesign.parkinglot.entity.ParkingSpot;
+import live.ashish.cpjava.systemdesign.parkinglot.entity.ParkingTicket;
 
 import java.util.ArrayList;
 import java.util.List;

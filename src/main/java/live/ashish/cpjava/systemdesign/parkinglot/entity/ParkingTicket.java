@@ -1,4 +1,4 @@
-package live.ashish.cpjava.systemdesign.parkinglot.pojos;
+package live.ashish.cpjava.systemdesign.parkinglot.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
