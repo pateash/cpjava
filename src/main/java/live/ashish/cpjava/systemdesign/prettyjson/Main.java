@@ -19,9 +19,9 @@ public class Main {
         // Create an example Java object
         ExampleObject exampleObject = new ExampleObject("John Doe", 30, "john.doe@example.com");
 
-//        String googleGsonJson = prettyPrintJsonGson(exampleObject);
-//        System.out.println("Google Version");
-//        System.out.println(googleGsonJson);
+        String googleGsonJson = prettyPrintJsonGson(exampleObject);
+        System.out.println("Google Version");
+        System.out.println(googleGsonJson);
         // our custom should be somewhat similar to google Gson library
 
         System.out.println("Our Custom Version");

@@ -16,14 +16,14 @@ public class CustomJsonPrettyPrint {
             result.append("null");
         } else if (obj instanceof Map) {
             prettyPrintMap((Map<?, ?>) obj, result, indent);
-        } else if (obj.getClass().isArray()) {
+        } else if (obj.getClass().isArray()) { // match to array like int[], String[] etc.
             prettyPrintArray(obj, result, indent);
-        } else if (obj instanceof Iterable) {
+        } else if (obj instanceof Iterable) { // match to any iterable like ArrayList<>, LinkedList<> etc.
             prettyPrintIterable((Iterable<?>) obj, result, indent);
         } else if (obj instanceof String || obj instanceof Number || obj instanceof Boolean) {
             result.append(obj);
         } else { // if not a simple type, we might have to recursively figure this object out
-            prettyPrintFields(obj, result, indent);
+            prettyPrintFields(obj, result, indent); // this could be some custom Class, we have to parse.
         }
     }
 

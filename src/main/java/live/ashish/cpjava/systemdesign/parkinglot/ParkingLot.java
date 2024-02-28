@@ -22,6 +22,7 @@ public class ParkingLot {
 
     public long capacity() {
         // return capacity of parking
+        // keep this value as a static count value increase and decrease whenever required.
         return parkingSpots.stream()
                 .filter(parkingSpot -> parkingSpot.vehicleType == VehicleType.EMPTY)
                 .count();
