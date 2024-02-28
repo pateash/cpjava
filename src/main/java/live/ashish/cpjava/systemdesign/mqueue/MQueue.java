@@ -1,9 +1,7 @@
 package live.ashish.cpjava.systemdesign.mqueue;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /*
 Design an In-Memory Pull Based Queue Library:
@@ -69,6 +67,9 @@ class MemQueue{
     private LinkedList<QMessage> queue;
     private LocalTime lastEviction;
     private long expiryTtl; // every message must follow this ( will be kicked out)
+
+
+    // TODO: better to use HashMap to store these 3 for O(1) time fetch
     private List<Subscriber> subscribers = new ArrayList<>();
     private List<Publisher> publishers= new ArrayList<>();
 
