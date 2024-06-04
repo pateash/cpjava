@@ -1,6 +1,7 @@
 package live.ashish.cpjava.systemdesign.splitwise;
 
-enum SplitType {
+public enum SplitType {
   EQUAL,
   UNEQUAL
 }
+
